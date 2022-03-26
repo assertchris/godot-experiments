@@ -1,0 +1,23 @@
+[gd_scene load_steps=4 format=3 uid="uid://wbbbf6wqi31v"]
+
+[ext_resource type="PackedScene" uid="uid://j88ao8os3sh2" path="res://nodes/experiments/experiment.tscn" id="1_tftu7"]
+[ext_resource type="Script" path="res://nodes/experiments/nodes-experiment.gd" id="2_m31m3"]
+[ext_resource type="PackedScene" uid="uid://dlt707ln31m3s" path="res://nodes/experiments/nodes-experiment/doodad.tscn" id="3_60yo3"]
+
+[node name="NodesExperiment" instance=ExtResource( "1_tftu7" )]
+script = ExtResource( "2_m31m3" )
+doodad_scene = ExtResource( "3_60yo3" )
+
+[node name="Background" type="ColorRect" parent="." index="0"]
+offset_left = -100.0
+offset_top = -100.0
+offset_right = 100.0
+offset_bottom = 100.0
+color = Color(0.2, 0.2, 0.2, 1)
+
+[node name="Items" type="GridContainer" parent="." index="1"]
+offset_left = -100.0
+offset_top = -100.0
+offset_right = 100.0
+offset_bottom = 100.0
+columns = 5
