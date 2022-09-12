@@ -1,0 +1,9 @@
+[gd_scene load_steps=4 format=3 uid="uid://b2qm26ybn4jv6"]
+
+[ext_resource type="PackedScene" uid="uid://j88ao8os3sh2" path="res://nodes/experiments/experiment.tscn" id="1_ia8bx"]
+[ext_resource type="Script" path="res://nodes/experiments/pixels-experiment.gd" id="2_ftb86"]
+[ext_resource type="Texture2D" uid="uid://cikupdpf1cwb1" path="res://images/layout-1.png" id="3_quq2l"]
+
+[node name="PixelsExperiment" instance=ExtResource( "1_ia8bx" )]
+script = ExtResource( "2_ftb86" )
+layout_texture = ExtResource( "3_quq2l" )

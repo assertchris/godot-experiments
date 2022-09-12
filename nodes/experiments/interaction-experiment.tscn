@@ -1,0 +1,53 @@
+[gd_scene load_steps=5 format=3 uid="uid://clut1nsvah02x"]
+
+[ext_resource type="PackedScene" uid="uid://j88ao8os3sh2" path="res://nodes/experiments/experiment.tscn" id="1_ag1b0"]
+[ext_resource type="Script" path="res://nodes/experiments/interaction-experiment.gd" id="2_det6x"]
+[ext_resource type="PackedScene" uid="uid://cebojssr0fqwj" path="res://nodes/experiments/interaction-experiment/interactable.tscn" id="3_ee5lp"]
+
+[sub_resource type="CircleShape2D" id="CircleShape2D_o5hes"]
+radius = 48.1664
+
+[node name="InteractionExperiment" instance=ExtResource("1_ag1b0")]
+script = ExtResource("2_det6x")
+metadata/_edit_vertical_guides_ = [-182.0]
+
+[node name="CharacterBody2D" type="CharacterBody2D" parent="." index="0"]
+position = Vector2(23, 93)
+
+[node name="ColorRect" type="ColorRect" parent="CharacterBody2D" index="0"]
+offset_left = -20.0
+offset_top = -20.0
+offset_right = 20.0
+offset_bottom = 20.0
+color = Color(0.168627, 1, 0.658824, 1)
+metadata/_edit_lock_ = true
+
+[node name="Interactable" parent="CharacterBody2D" index="1" instance=ExtResource("3_ee5lp")]
+unique_name_in_owner = true
+metadata/_edit_lock_ = true
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="CharacterBody2D/Interactable" index="0"]
+shape = SubResource("CircleShape2D_o5hes")
+metadata/_edit_lock_ = true
+
+[node name="Node2D" type="Node2D" parent="." index="1"]
+position = Vector2(109, 94)
+
+[node name="ColorRect" type="ColorRect" parent="Node2D" index="0"]
+offset_left = -20.0
+offset_top = -20.0
+offset_right = 20.0
+offset_bottom = 20.0
+color = Color(1, 0.615686, 0.133333, 1)
+metadata/_edit_lock_ = true
+
+[node name="Interactable" parent="Node2D" index="1" instance=ExtResource("3_ee5lp")]
+metadata/_edit_lock_ = true
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Node2D/Interactable" index="0"]
+shape = SubResource("CircleShape2D_o5hes")
+metadata/_edit_lock_ = true
+
+[connection signal="interactable_entered" from="CharacterBody2D/Interactable" to="." method="_on_player_interactable_interactable_entered"]
+[connection signal="interactable_exited" from="CharacterBody2D/Interactable" to="." method="_on_player_interactable_interactable_exited"]
+[connection signal="receive_interaction" from="Node2D/Interactable" to="." method="_on_npc_interactable_receive_interaction"]

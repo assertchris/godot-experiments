@@ -1,0 +1,151 @@
+[gd_scene load_steps=3 format=3 uid="uid://dk8n8h1eqah8c"]
+
+[ext_resource type="PackedScene" uid="uid://j88ao8os3sh2" path="res://nodes/experiments/experiment.tscn" id="1_8en86"]
+[ext_resource type="Script" path="res://nodes/experiments/collective-nodes-experiment.gd" id="2_8bm8t"]
+
+[node name="CollectiveNodesExperiment" instance=ExtResource("1_8en86")]
+script = ExtResource("2_8bm8t")
+
+[node name="HBoxContainer" type="HBoxContainer" parent="." index="0"]
+offset_left = -205.0
+offset_top = -100.0
+offset_right = 205.0
+offset_bottom = 100.0
+theme_override_constants/separation = 10
+
+[node name="VBoxContainer" type="VBoxContainer" parent="HBoxContainer" index="0"]
+custom_minimum_size = Vector2(200, 0)
+offset_right = 200.0
+offset_bottom = 200.0
+
+[node name="HBoxContainer" type="HBoxContainer" parent="HBoxContainer/VBoxContainer" index="0"]
+offset_right = 200.0
+offset_bottom = 31.0
+
+[node name="Label" type="Label" parent="HBoxContainer/VBoxContainer/HBoxContainer" index="0"]
+offset_top = 2.0
+offset_right = 100.0
+offset_bottom = 28.0
+size_flags_horizontal = 3
+text = "width"
+horizontal_alignment = 1
+
+[node name="WidthOptionButton" type="OptionButton" parent="HBoxContainer/VBoxContainer/HBoxContainer" index="1"]
+offset_left = 104.0
+offset_right = 200.0
+offset_bottom = 31.0
+item_count = 3
+selected = 0
+popup/item_0/text = "1 unit"
+popup/item_0/id = 0
+popup/item_1/text = "2 units"
+popup/item_1/id = 1
+popup/item_2/text = "3 units"
+popup/item_2/id = 2
+
+[node name="HBoxContainer2" type="HBoxContainer" parent="HBoxContainer/VBoxContainer" index="1"]
+offset_top = 35.0
+offset_right = 200.0
+offset_bottom = 66.0
+
+[node name="Label" type="Label" parent="HBoxContainer/VBoxContainer/HBoxContainer2" index="0"]
+offset_top = 2.0
+offset_right = 100.0
+offset_bottom = 28.0
+size_flags_horizontal = 3
+text = "height"
+horizontal_alignment = 1
+
+[node name="HeightOptionButton" type="OptionButton" parent="HBoxContainer/VBoxContainer/HBoxContainer2" index="1"]
+offset_left = 104.0
+offset_right = 200.0
+offset_bottom = 31.0
+item_count = 3
+selected = 0
+popup/item_0/text = "1 unit"
+popup/item_0/id = 0
+popup/item_1/text = "2 units"
+popup/item_1/id = 1
+popup/item_2/text = "3 units"
+popup/item_2/id = 2
+
+[node name="ColorRect" type="ColorRect" parent="HBoxContainer" index="1"]
+custom_minimum_size = Vector2(200, 200)
+offset_left = 210.0
+offset_right = 410.0
+offset_bottom = 200.0
+
+[node name="1x1" type="Node2D" parent="HBoxContainer/ColorRect" index="0"]
+
+[node name="TileMap1" type="TileMap" parent="HBoxContainer/ColorRect/1x1" index="0"]
+format = 2
+
+[node name="TileMap2" type="TileMap" parent="HBoxContainer/ColorRect/1x1" index="1"]
+format = 2
+
+[node name="1x2" type="Node2D" parent="HBoxContainer/ColorRect" index="1"]
+
+[node name="TileMap1" type="TileMap" parent="HBoxContainer/ColorRect/1x2" index="0"]
+format = 2
+
+[node name="TileMap2" type="TileMap" parent="HBoxContainer/ColorRect/1x2" index="1"]
+format = 2
+
+[node name="1x3" type="Node2D" parent="HBoxContainer/ColorRect" index="2"]
+
+[node name="TileMap1" type="TileMap" parent="HBoxContainer/ColorRect/1x3" index="0"]
+format = 2
+
+[node name="TileMap2" type="TileMap" parent="HBoxContainer/ColorRect/1x3" index="1"]
+format = 2
+
+[node name="2x1" type="Node2D" parent="HBoxContainer/ColorRect" index="3"]
+
+[node name="TileMap1" type="TileMap" parent="HBoxContainer/ColorRect/2x1" index="0"]
+format = 2
+
+[node name="TileMap2" type="TileMap" parent="HBoxContainer/ColorRect/2x1" index="1"]
+format = 2
+
+[node name="2x2" type="Node2D" parent="HBoxContainer/ColorRect" index="4"]
+
+[node name="TileMap1" type="TileMap" parent="HBoxContainer/ColorRect/2x2" index="0"]
+format = 2
+
+[node name="TileMap2" type="TileMap" parent="HBoxContainer/ColorRect/2x2" index="1"]
+format = 2
+
+[node name="2x3" type="Node2D" parent="HBoxContainer/ColorRect" index="5"]
+
+[node name="TileMap1" type="TileMap" parent="HBoxContainer/ColorRect/2x3" index="0"]
+format = 2
+
+[node name="TileMap2" type="TileMap" parent="HBoxContainer/ColorRect/2x3" index="1"]
+format = 2
+
+[node name="3x1" type="Node2D" parent="HBoxContainer/ColorRect" index="6"]
+
+[node name="TileMap1" type="TileMap" parent="HBoxContainer/ColorRect/3x1" index="0"]
+format = 2
+
+[node name="TileMap2" type="TileMap" parent="HBoxContainer/ColorRect/3x1" index="1"]
+format = 2
+
+[node name="3x2" type="Node2D" parent="HBoxContainer/ColorRect" index="7"]
+
+[node name="TileMap1" type="TileMap" parent="HBoxContainer/ColorRect/3x2" index="0"]
+format = 2
+
+[node name="TileMap2" type="TileMap" parent="HBoxContainer/ColorRect/3x2" index="1"]
+format = 2
+
+[node name="3x3" type="Node2D" parent="HBoxContainer/ColorRect" index="8"]
+
+[node name="TileMap1" type="TileMap" parent="HBoxContainer/ColorRect/3x3" index="0"]
+format = 2
+
+[node name="TileMap2" type="TileMap" parent="HBoxContainer/ColorRect/3x3" index="1"]
+format = 2
+
+[connection signal="item_selected" from="HBoxContainer/VBoxContainer/HBoxContainer/WidthOptionButton" to="." method="_on_width_option_button_item_selected"]
+[connection signal="item_selected" from="HBoxContainer/VBoxContainer/HBoxContainer2/HeightOptionButton" to="." method="_on_height_option_button_item_selected"]

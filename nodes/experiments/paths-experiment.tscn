@@ -1,0 +1,83 @@
+[gd_scene load_steps=10 format=3 uid="uid://ckcyv28ao7ehn"]
+
+[ext_resource type="PackedScene" uid="uid://j88ao8os3sh2" path="res://nodes/experiments/experiment.tscn" id="1_4adpt"]
+[ext_resource type="Script" path="res://nodes/experiments/paths-experiment.gd" id="2_j232f"]
+[ext_resource type="PackedScene" uid="uid://bmgnh1p5vjgi8" path="res://nodes/experiments/paths-experiment/connected-path-2d.tscn" id="3_dwpmr"]
+
+[sub_resource type="Curve2D" id="Curve2D_7dkog"]
+_data = {
+"points": PackedVector2Array(0, 0, 0, 0, -192, 64, 0, 0, 148.975, 0, 192, 64)
+}
+point_count = 2
+
+[sub_resource type="Curve2D" id="Curve2D_lw51p"]
+_data = {
+"points": PackedVector2Array(0, 0, 0, 0, -128, 32, 0, 0, 0, 0, -128, -64)
+}
+point_count = 2
+
+[sub_resource type="Curve2D" id="Curve2D_2kes6"]
+_data = {
+"points": PackedVector2Array(0, 0, 0, 0, 128, 32, 0, 0, 0, 0, 128, -64)
+}
+point_count = 2
+
+[sub_resource type="Curve2D" id="Curve2D_b848b"]
+_data = {
+"points": PackedVector2Array(0, 0, 0, 0, -192, -96, 0, 0, 0, 0, 192, -96)
+}
+point_count = 2
+
+[sub_resource type="Curve2D" id="Curve2D_acsbt"]
+_data = {
+"points": PackedVector2Array(0, 0, 0, 0, -128, -128, 0, 0, 0, 0, -128, -224)
+}
+point_count = 2
+
+[sub_resource type="Curve2D" id="Curve2D_6yskg"]
+_data = {
+"points": PackedVector2Array(0, 0, 0, 0, 128, -128, 0, 0, 0, 0, 128, -224)
+}
+point_count = 2
+
+[node name="PathsExperiment" instance=ExtResource("1_4adpt")]
+script = ExtResource("2_j232f")
+
+[node name="ConnectedPath2D1" parent="." index="0" instance=ExtResource("3_dwpmr")]
+unique_name_in_owner = true
+position = Vector2(0, 96)
+curve = SubResource("Curve2D_7dkog")
+connected_paths = [NodePath("../ConnectedPath2D2"), NodePath("../ConnectedPath2D3")]
+
+[node name="PathFollow2D" type="PathFollow2D" parent="ConnectedPath2D1" index="0"]
+unique_name_in_owner = true
+position = Vector2(-192, 64)
+
+[node name="ColorRect" type="ColorRect" parent="ConnectedPath2D1/PathFollow2D" index="0"]
+offset_right = 40.0
+offset_bottom = 40.0
+
+[node name="ConnectedPath2D2" parent="." index="1" instance=ExtResource("3_dwpmr")]
+position = Vector2(0, 96)
+curve = SubResource("Curve2D_lw51p")
+connected_paths = [NodePath("../ConnectedPath2D1"), NodePath("../ConnectedPath2D4")]
+
+[node name="ConnectedPath2D3" parent="." index="2" instance=ExtResource("3_dwpmr")]
+position = Vector2(0, 96)
+curve = SubResource("Curve2D_2kes6")
+connected_paths = [NodePath("../ConnectedPath2D1"), NodePath("../ConnectedPath2D4")]
+
+[node name="ConnectedPath2D4" parent="." index="3" instance=ExtResource("3_dwpmr")]
+position = Vector2(0, 96)
+curve = SubResource("Curve2D_b848b")
+connected_paths = [NodePath("../ConnectedPath2D2"), NodePath("../ConnectedPath2D3"), NodePath("../ConnectedPath2D5"), NodePath("../ConnectedPath2D6")]
+
+[node name="ConnectedPath2D5" parent="." index="4" instance=ExtResource("3_dwpmr")]
+position = Vector2(0, 96)
+curve = SubResource("Curve2D_acsbt")
+connected_paths = [NodePath("../ConnectedPath2D4")]
+
+[node name="ConnectedPath2D6" parent="." index="5" instance=ExtResource("3_dwpmr")]
+position = Vector2(0, 96)
+curve = SubResource("Curve2D_6yskg")
+connected_paths = [NodePath("../ConnectedPath2D4")]

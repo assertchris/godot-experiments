@@ -1,0 +1,113 @@
+[gd_scene load_steps=3 format=3 uid="uid://yfn3cy13ivcj"]
+
+[ext_resource type="PackedScene" uid="uid://j88ao8os3sh2" path="res://nodes/experiments/experiment.tscn" id="1_gt2hy"]
+[ext_resource type="Script" path="res://nodes/experiments/seed-experiment.gd" id="2_ge3ad"]
+
+[node name="SeedExperiment" instance=ExtResource("1_gt2hy")]
+script = ExtResource("2_ge3ad")
+metadata/_edit_use_custom_anchors = true
+
+[node name="Rows" type="VBoxContainer" parent="." index="0"]
+offset_left = -197.0
+offset_top = -18.0
+offset_right = 198.0
+offset_bottom = 103.0
+
+[node name="Controls" type="HBoxContainer" parent="Rows" index="0"]
+offset_right = 395.0
+offset_bottom = 31.0
+alignment = 1
+
+[node name="Seed" type="LineEdit" parent="Rows/Controls" index="0"]
+offset_right = 300.0
+offset_bottom = 31.0
+
+[node name="Randomise" type="Button" parent="Rows/Controls" index="1"]
+offset_left = 304.0
+offset_right = 395.0
+offset_bottom = 31.0
+text = "randomise"
+
+[node name="RandomNumbers" type="GridContainer" parent="Rows" index="1"]
+offset_top = 35.0
+offset_right = 395.0
+offset_bottom = 121.0
+columns = 3
+
+[node name="Random1" type="Label" parent="Rows/RandomNumbers" index="0"]
+offset_right = 129.0
+offset_bottom = 26.0
+size_flags_horizontal = 3
+text = "number 1"
+horizontal_alignment = 1
+
+[node name="Random2" type="Label" parent="Rows/RandomNumbers" index="1"]
+offset_left = 133.0
+offset_right = 262.0
+offset_bottom = 26.0
+size_flags_horizontal = 3
+text = "number 3"
+horizontal_alignment = 1
+
+[node name="Random3" type="Label" parent="Rows/RandomNumbers" index="2"]
+offset_left = 266.0
+offset_right = 395.0
+offset_bottom = 26.0
+size_flags_horizontal = 3
+text = "number 3"
+horizontal_alignment = 1
+
+[node name="Random4" type="Label" parent="Rows/RandomNumbers" index="3"]
+offset_top = 30.0
+offset_right = 129.0
+offset_bottom = 56.0
+size_flags_horizontal = 3
+text = "number 4"
+horizontal_alignment = 1
+
+[node name="Random5" type="Label" parent="Rows/RandomNumbers" index="4"]
+offset_left = 133.0
+offset_top = 30.0
+offset_right = 262.0
+offset_bottom = 56.0
+size_flags_horizontal = 3
+text = "number 5"
+horizontal_alignment = 1
+
+[node name="Random6" type="Label" parent="Rows/RandomNumbers" index="5"]
+offset_left = 266.0
+offset_top = 30.0
+offset_right = 395.0
+offset_bottom = 56.0
+size_flags_horizontal = 3
+text = "number 6"
+horizontal_alignment = 1
+
+[node name="Random7" type="Label" parent="Rows/RandomNumbers" index="6"]
+offset_top = 60.0
+offset_right = 129.0
+offset_bottom = 86.0
+size_flags_horizontal = 3
+text = "number 7"
+horizontal_alignment = 1
+
+[node name="Random8" type="Label" parent="Rows/RandomNumbers" index="7"]
+offset_left = 133.0
+offset_top = 60.0
+offset_right = 262.0
+offset_bottom = 86.0
+size_flags_horizontal = 3
+text = "number 8"
+horizontal_alignment = 1
+
+[node name="Random9" type="Label" parent="Rows/RandomNumbers" index="8"]
+offset_left = 266.0
+offset_top = 60.0
+offset_right = 395.0
+offset_bottom = 86.0
+size_flags_horizontal = 3
+text = "number 9"
+horizontal_alignment = 1
+
+[connection signal="text_changed" from="Rows/Controls/Seed" to="." method="_on_seed_text_changed"]
+[connection signal="pressed" from="Rows/Controls/Randomise" to="." method="_on_randomise_pressed"]

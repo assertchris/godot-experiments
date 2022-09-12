@@ -2,18 +2,22 @@
 
 [ext_resource type="PackedScene" uid="uid://bstm4jo0s7yog" path="res://nodes/screens/screen.tscn" id="1_24bmr"]
 [ext_resource type="Script" path="res://nodes/screens/play-screen.gd" id="2_dliks"]
-[ext_resource type="PackedScene" uid="uid://wbbbf6wqi31v" path="res://nodes/experiments/nodes-experiment.tscn" id="3_7m27w"]
+[ext_resource type="PackedScene" uid="uid://clut1nsvah02x" path="res://nodes/experiments/interaction-experiment.tscn" id="3_f4isn"]
 
-[node name="PlayScreen" instance=ExtResource( "1_24bmr" )]
-script = ExtResource( "2_dliks" )
-experiment_scene = ExtResource( "3_7m27w" )
+[node name="PlayScreen" instance=ExtResource("1_24bmr")]
+anchors_preset = 15
+script = ExtResource("2_dliks")
+experiment_scene = ExtResource("3_f4isn")
 
 [node name="Center" type="CenterContainer" parent="." index="0"]
-offset_right = 1024.0
-offset_bottom = 600.0
+layout_mode = 2
+offset_right = 1152.0
+offset_bottom = 648.0
 
 [node name="Anchor" type="Control" parent="Center" index="0"]
-offset_left = 512.0
-offset_top = 300.0
-offset_right = 512.0
-offset_bottom = 300.0
+layout_mode = 2
+anchors_preset = 0
+offset_left = 576.0
+offset_top = 324.0
+offset_right = 576.0
+offset_bottom = 324.0
